@@ -1,0 +1,49 @@
+body {
+  font-family: Helvetica;
+  font-weight: 600;
+  text-shadow: 2px 2px #FFFFFF;
+  background:white;
+  color: rgb(250,103,79);
+}
+
+a {
+  color: rgb(250,103,79);
+  text-decoration: none;
+}
+
+canvas {}
+
+#phone {
+  position: relative;
+  z-index: 32;
+  padding-left: 40vw;
+  padding-top: 8vh;
+  font-size: 3vw;
+}
+
+#overlay {
+  z-index: 30;
+  font-size: 18vw;
+  padding-top: 8vh;
+  padding-left: 3vw;
+  position: relative;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#links {
+  z-index: 31;
+  position: relative;
+  padding-left: 5vw;
+  padding-top: 2rem;
+  font-size: 5vw;
+  word-spacing: 3vw;
+}
