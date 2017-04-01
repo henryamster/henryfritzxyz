@@ -1,17 +1,27 @@
 body {
-  font-family: Helvetica;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+body {
+  font-family: 'Lato';
   font-weight: 600;
-  text-shadow: 2px 2px #FFFFFF;
-  background:white;
-  color: rgb(250,103,79);
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  background: white;
+  color: rgba(0, 0, 0, 1);
 }
 
 a {
-  color: rgb(250,103,79);
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
 }
 
-canvas {}
+a:hover {
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.9);
+}
 
 #phone {
   position: relative;
@@ -22,15 +32,12 @@ canvas {}
 }
 
 #overlay {
+  font-weight:300;
   z-index: 30;
   font-size: 18vw;
   padding-top: 8vh;
   padding-left: 3vw;
   position: relative;
-}
-
-.invisible {
-  visibility: hidden;
 }
 
 canvas {
@@ -46,4 +53,14 @@ canvas {
   padding-top: 2rem;
   font-size: 5vw;
   word-spacing: 3vw;
+}
+aside{
+  z-index:34;
+  position: relative;
+  text-align:center;
+  margin:12vh 25vw;
+  text-shadow:none;
+  font-size:16px;
+  background:rgba(255,255,255,0.6);
+  border-radius:8px;
 }
