@@ -2,7 +2,7 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(140,255,217);
 }
 
 body {
@@ -10,7 +10,7 @@ body {
   font-weight: 600;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
   background: white;
-  color: rgba(0, 0, 0, 1);
+  color: rgba(140,255,217, 1);
 }
 
 a {
@@ -32,6 +32,7 @@ a:hover {
 }
 
 #overlay {
+
   font-weight:300;
   z-index: 30;
   font-size: 18vw;
@@ -60,8 +61,11 @@ aside{
   text-align:center;
   padding:10px;
   margin:12vh 15vw;
-  text-shadow:none;
+  text-shadow: none;
   font-size:16px;
-  background:rgba(255,255,255,0.6);
+  color: rgba(0,0,0,0.6);
+  background:rgba(255,255,255,0.9);
+  box-shadow:5px 5px rgba(255,255,255,0.7);
+  font-variant:small-caps;
   border-radius:8px;
 }
