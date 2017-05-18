@@ -136,11 +136,10 @@ article:nth-of-type(2) {
 .content{
     padding-top:5vh;
     padding-bottom:5vh;
-    margin:0;
-    width:50vw;
-    margin-left:25vw;
-    background:rgba(255,255,255,0.3);
-    border-radius:15px;
+    padding-left:5vw;
+    padding-right:5vw;
+    width:88%;
+    background:rgba(255,255,255,0.8);
     box-shadow: rgba(0,0,0,0.2) 2px 2px;
 }
 
@@ -194,4 +193,6 @@ article:nth-of-type(2) {
     text-align:left;
     margin-left:50px;
 }
+
+
 }

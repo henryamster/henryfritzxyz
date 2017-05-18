@@ -40,3 +40,8 @@ else {
    rect(x + i * 3 + y, y + i * 3 - x, movey + i, movey + i);
 }
 }
+
+//Henry Fritz Design & Development
+//HenryAmsterFritz@gmail.com
+//p5 sketch for index, resize listener (if you're reading this, how can
+//I also accomodate for min/max behavior? )

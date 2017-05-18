@@ -11,5 +11,5 @@ app.get('/post', function (req, res){
     res.sendFile(__dirname + '/client/post.html');
 })
 
-
+console.log(process.env.IP + ":" + process.env.PORT)
 app.listen(process.env.PORT, process.env.IP);

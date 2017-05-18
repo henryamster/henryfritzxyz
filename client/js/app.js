@@ -1,9 +1,5 @@
- 
 
- 
- // Initialize Firebase
- 
- 
+ //Initialize Firebase
   var config = {
     apiKey: "AIzaSyA_UwnK15GF9F317cX_1NCCdLr1BvAIvSM",
     authDomain: "blog-b77f8.firebaseapp.com",
@@ -14,80 +10,69 @@
   };
   firebase.initializeApp(config);
   
+  //Provider for googleOAuth
   var provider = new firebase.auth.GoogleAuthProvider();
-  
+  //RO scope for checking  google OAuth
   provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-  
-  //comparative date reference
+  //Comparative date reference
   var now = Date.now();
-  //reference for blogposts
-  var postsRef = firebase.database().ref('blogposts/').orderByChild('date').endAt(now).limitToFirst(12);
-
-
+  //DB reference for blogposts
+  var postsRef = firebase.database().ref('blogposts/');
   //load blogposts
-postsRef.once('value', function(snapshot) {
+postsRef.orderByChild("date").limitToLast(12).on('value', function(snapshot) {
   postLoader(snapshot.val())});
-  
 function postLoader(snapshot){
-   //load up each individual blogpost
-   for (var prop in snapshot) {
-    var propRef = firebase.database().ref('blogposts/' + prop);
-    
-    
-    propRef.once('value', function(snapshot){
+   //load up each individual blogpost snapshot, with ID values
+   for (var postID in snapshot) {
+    var postIDRef = firebase.database().ref('blogposts/' + postID);
+    postIDRef.on('value', function(snapshot){
      poster(snapshot.val())})
-   
 }
 };
-
 function poster(snapshot){
+    
  if (document.getElementById("art")){
- //locate article, append content
+ //locate empty article to append content to
 var art = document.getElementById("art");
 //create article
 var artic = document.createElement("article");
-
+//create titleNode, append textnode, apply css
 var titleNode = document.createElement("h3");  
   titleNode.className = "title";
   var titleTextNode = document.createTextNode(snapshot.title);         
   titleNode.appendChild(titleTextNode);     
+//create dateNode, append textnode (date from snapshot properly formatted), apply css
 var dateNode = document.createElement("p");
   dateNode.className = "date";
   var d = new Date(snapshot.date);
-  var dateTextNode = document.createTextNode(d.toLocaleDateString("en-US") + d.toLocaleTimeString("en-us"));
+  var dateTextNode = document.createTextNode(d.toLocaleDateString("en-US") + "  " + d.toLocaleTimeString("en-us"));
   dateNode.appendChild(dateTextNode);
+//check to see that an image link has been included, if not, skip
   if (snapshot.file.length >0){
+//create imageNode, append image source, apply css
 var imageNode = document.createElement("img");
   imageNode.src = snapshot.file;}
+////create contentNode, append textnode, apply css
 var contentNode = document.createElement("p");
   contentNode.className = "content";
   var contentTextNode = document.createTextNode(snapshot.content);
   contentNode.appendChild(contentTextNode);
+  //append child nodes to article node
   artic.appendChild(titleNode);
-  artic.appendChild(dateNode)
+  artic.appendChild(dateNode);
+  //check again to ensure existence of image node
   if (snapshot.file.length >0){artic.appendChild(imageNode);}
+  //append child nodes to article
   artic.appendChild(contentNode);
-  
-  
-  art.appendChild(artic);
+  //properly insert post at top of page
+  art.insertBefore(artic, art.firstChild)
 }}
-/*
-console.log(prop);
-    console.log(propRef);
-    */
-  
-  
-  
   var submitBtn = document.getElementById("submit");
  if (submitBtn)
  {submitBtn.addEventListener("click", function(){submitBlogPost()});
  }
- 
- 
- 
  //new submit function
  function submitBlogPost(){
-  
   var email = "henryamsterfritz@gmail.com";
   var password = document.getElementById("password");
   var pw = password.value;
@@ -131,3 +116,6 @@ else{
  
 }
 
+//Henry Fritz Design & Development
+//HenryAmsterFritz@gmail.com
+//Firebase logic, all in one file. 
