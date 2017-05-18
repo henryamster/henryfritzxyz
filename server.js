@@ -4,7 +4,12 @@ app.use(express.static('client'));
 app.get('/', function (req, res){
     res.sendfile(__dirname + '/client/index.html');
 });
-app.get('/CIS240', function (req, res){
-    res.sendFile(__dirname + '/240/cis240.html');
+app.get('/blog', function (req, res){
+    res.sendFile(__dirname + '/client/blog.html');
 })
+app.get('/post', function (req, res){
+    res.sendFile(__dirname + '/client/post.html');
+})
+
+
 app.listen(process.env.PORT, process.env.IP);
