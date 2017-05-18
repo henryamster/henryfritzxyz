@@ -2,6 +2,8 @@
 
  
  // Initialize Firebase
+ 
+ 
   var config = {
     apiKey: "AIzaSyA_UwnK15GF9F317cX_1NCCdLr1BvAIvSM",
     authDomain: "blog-b77f8.firebaseapp.com",
@@ -19,7 +21,7 @@
   //comparative date reference
   var now = Date.now();
   //reference for blogposts
-  var postsRef = firebase.database().ref('blogposts/').orderByChild('date').limitToFirst(12);
+  var postsRef = firebase.database().ref('blogposts/').orderByChild('date').endAt(now).limitToFirst(12);
 
 
   //load blogposts
@@ -89,15 +91,15 @@ console.log(prop);
   var email = "henryamsterfritz@gmail.com";
   var password = document.getElementById("password");
   var pw = password.value;
-  
+  console.log("pw");
   firebase.auth().signInWithEmailAndPassword(email, pw).catch(function(error) {
    
   var errorCode = error.code;
   var errorMessage = error.message;
 });
 
-var user = firebase.auth().currentUser;
-
+//firvar user = firebase.auth().currentUser;
+firebase.auth().onAuthStateChanged(function(user) {
 
 if (user) {
    var title = document.getElementById("title");
@@ -125,7 +127,7 @@ else{
 }
  
   
-}
+})
  
-
+}
 

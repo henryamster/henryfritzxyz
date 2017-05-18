@@ -69,3 +69,6 @@ aside{
   font-variant:small-caps;
   border-radius:8px;
 }
+aside a{
+  color:black;
+}
