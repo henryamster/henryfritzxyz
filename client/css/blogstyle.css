@@ -43,12 +43,12 @@ img{
      box-shadow: rgba(0,0,0,0.2) 2px 2px;
 }
 
-nav li a{
+nav a{
    
     color:white;
     text-decoration: none;
 }
-nav li a:hover{
+nav a li:hover{
     color:rgb(200,200,200);
 }
 footer{
@@ -154,7 +154,7 @@ article:nth-of-type(2) {
  nav{
      padding:0;
  }
-  nav li {
+  nav a li {
      display:block;
     font-size:8vw;
      text-align: right;
@@ -163,7 +163,7 @@ article:nth-of-type(2) {
      background:rgb(16,16,16);
      width:50vw;
   }
-  nav li:hover{
+  nav a li:hover{
       background:rgb(32,32,32);
   }
     
