@@ -1,74 +1,182 @@
+/*
+#91ffdb AQuA
+#abf3a4 SEAFOAM
+#d1df72 MUSTARD
+#fac454 ORANGE
+#ffa15a DEEP RANGE
+#ff7881 SALMON
+#ff5abb PANKO
+*/
+
+
+html {
+   /* min-height: 100vh;*/
+}
+
+@media all and (max-width: 2991px) and (min-width:991px) {
+    body {
+        font-size: 38px;
+        min-height:100vh;
+
+    }
+    aside {
+        visibility: hidden;
+    }
+   
+    .wrapper {
+        max-width: 1274px;
+        margin: 0 auto;
+        min-height: 100vh;
+        border:0px;
+    }
+   
+
+}
+
+@media all and (max-width: 991px) {
+    body {
+        font-size: 35px;
+    }
+
+}
+
+@media all and (max-width: 768px) {
+    body {
+        font-size: 28px;
+    }
+
+}
+
+@media all and (max-width: 563px) {
+    body {
+        font-size: 18px;
+    }
+
+}
+
+@media all and (max-width:365px) {
+    body {
+        font-size: 14px;
+    }
+    nav a {
+        display: inline-block;
+       
+    }
+ 
+
+
+}
+
+svg{
+    height:155px;
+  /*float:left;*/
+    display:inline-block;
+     text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+    
+}
 body {
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  background-color: rgb(140,255,217);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    /*    background:linear-gradient(45deg, #ff5abb 0%,#ff7881 19%,#ffa15a 37%,#fac454 50%,#d1df72 66%,#abf3a4 82%,#91ffdb 100%);*/
+    /*background: linear-gradient(180deg, #222 0%, #C99 9%,#699 14%, #aaa 18%, #ccc 50%,#bbb 76%, #fcc 84%, #DCD 88%, #222 100%);*/
+    background-color:#ff7881;
+    font-family: 'Lato';
+    font-weight: 600;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  /*  box-shadow: 4px 4px rgba(0, 0, 0, 0.5);*/
+    text-align: center;
+    color: beige;
 }
 
-body {
-  font-family: 'Lato';
-  font-weight: 600;
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
-  background: white;
-  color: rgba(140,255,217, 1);
-}
-
-a {
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: none;
-}
-
-a:hover {
-  color: rgba(255, 255, 255, 1);
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.9);
-}
-
-#phone {
-  position: relative;
-  z-index: 32;
-  padding-left: 40vw;
-  padding-top: 8vh;
-  font-size: 3vw;
-}
-
-#overlay {
-
-  font-weight:300;
-  z-index: 30;
-  font-size: 18vw;
-  padding-top: 8vh;
-  padding-left: 3vw;
-  position: relative;
+a svg:hover{
+    stroke:#000;
 }
 
 canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    height:110vh;
+    width:110vw;
 }
 
-#links {
-  z-index: 31;
-  position: relative;
-  padding-left: 5vw;
-  padding-top: 2rem;
-  font-size: 5vw;
-  word-spacing: 3vw;
+.wrapper {
+    max-width: 891px;
+    margin: 0 auto;
+    min-height: 100vh;
 }
-aside{
-  z-index:34;
-  position: relative;
-  text-align:center;
-  padding:10px;
-  margin:12vh 15vw;
-  text-shadow: none;
-  font-size:16px;
-  color: rgba(0,0,0,0.6);
-  background:rgba(255,255,255,0.9);
-  box-shadow:5px 5px rgba(255,255,255,0.7);
-  font-variant:small-caps;
-  border-radius:8px;
+
+
+h1 {
+    font-size: 4em;
+margin-bottom: 28.84px;
 }
-aside a{
-  color:black;
+
+nav a {
+    /* background: linear-gradient(45deg, #ff5abb 0%,#ff7881 19%,#ffa15a 37%,#fac454 50%,#d1df72 66%,#abf3a4 82%,#91ffdb 100%); */
+    padding: 2px;
+    border-radius: 8px;
+
 }
+
+a {
+    color: ivory;
+    text-decoration: none;
+}
+
+a:hover {
+    color: palevioletred;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.9);
+}
+
+#phone {
+    margin-top: 38px;
+}
+
+#phone a {
+
+    /* background: linear-gradient(45deg, #91ffdb 0%,#abf3a4 18%,#d1df72 34%,#fac454 50%,#ffa15a 63%,#ff7881 81%,#ff5abb 100%); 
+    border-radius: 8px;*/
+}
+
+#overlay {
+    font-weight: 300;
+    padding-top: 18px;
+
+}
+
+nav {
+   
+
+    word-spacing: 3vw;
+}
+
+aside {
+    margin: 20px;
+    text-shadow: none;
+    color: palevioletred;
+    background-color: oldlace;
+    box-shadow: 5px 5px rgba(255, 255, 255, 0.7);
+    font-variant: small-caps;
+    border-radius: 8px;
+}
+
+aside p {
+    padding: 6px;
+    font-size: .8em;
+    /*margin-top:25vh;
+}*/
+    .card {
+        min-height: 100vh;
+        background: linear-gradient(135deg, rgba(255, 120, 129, 1) 0%, rgba(241, 218, 54, 1) 100%);
+        padding: 0px;
+        margin: 0px;
+    }
+
+    #console {
+        height: 323px;
+        float: right;
+    }
