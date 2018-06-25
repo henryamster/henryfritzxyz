@@ -11,7 +11,6 @@ function setup() {
     //prev is initiated as a bool to prevent a null pointer 
     prev = false;
 }
-
 function draw() {
      background(255);
     // removed mousepress behavior
@@ -31,9 +30,13 @@ function draw() {
     var t = verts.slice((verts.length - 13), verts.length);
     //iterate through t for the last 12 values, create lines between points
     var s = t.forEach(function () {
+    
         if (verts.length > 12) {
+                if (verts[0][1] == verts[10][1] && verts[0][0] == verts[10][0]){
+    return;
+}
             for (var i = 1; i < 12; i++) {
-                var diff = 20 * sin((t[i][0] - t[i][0] * t[i + 1][0] - t[i + 1][1]));
+                var diff = 20 * sin((t[i][0] - t[i][1] * t[i + 1][0] - t[i + 1][1]));
                 color(random(0, 255), random(0, 255), random(0, 255));
                 stroke(random(0, 255) * diff, random(0, 255), random(0, 255));
                 strokeWeight(1 * diff);
@@ -47,6 +50,10 @@ function draw() {
     //    verts=[];
     //    lines=[];
     //}
+    //slice out old values from verts and lines arrays
+    verts = verts.slice((verts.length - 50), verts.length);
+    lines= lines.slice((lines.length - 50), lines.length);
+    
 }
 
 
@@ -61,3 +68,4 @@ function createLine(x1, y1, x2, y2) {
     line(x1, y1, x2, y2);
     lines.push([x1, y1, x2, y2]);
 }
+
