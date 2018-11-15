@@ -1,0 +1,92 @@
+<html><head>
+  <title>Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" type="text/css" />
+</head><body>
+<div class="columns">
+  <div class="column">
+    <h1 class="is-size-1 has-text-centered">Admin Panel</h1>
+  </div>
+</div>
+<div class="columns"><div class="column">
+  <div id="res"></div>
+  
+  </div></div>
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+<script>
+  var config = {
+    apiKey: "AIzaSyBk9TVjG5eHYUbwm6e50fhQvpISSek-8Pg",
+    authDomain: "henryfritz-30302.firebaseapp.com",
+    databaseURL: "https://henryfritz-30302.firebaseio.com",
+    projectId: "henryfritz-30302",
+    storageBucket: "henryfritz-30302.appspot.com",
+    messagingSenderId: "341982203008"
+  };
+  firebase.initializeApp(config);
+
+
+// Attach an asynchronous callback to read the data at our posts reference
+
+
+
+  res= document.getElementById('res');
+var t = firebase.database().ref('/inquiry');
+t.on('value', function(snapshot) {
+  updateMessages(res, snapshot.val());
+});
+
+function updateMessages(e, inq){
+  for (msg in inq){
+    console.log(createContainer(inq[msg]));
+  e.appendChild( createContainer(inq[msg]));
+}
+}
+function createContainer(messageObject){
+  //div parent
+  const container = document.createElement('DIV');
+  container.classList.add("card", "column");
+ 
+  
+  nameContainer = document.createElement('H1');
+  nameTextNode = document.createTextNode(messageObject.name);
+  nameContainer.appendChild(nameTextNode);
+  nameContainer.classList.add("is-size-3");
+  
+   
+  messageContainer = document.createElement('P');
+  messageTextNode = document.createTextNode(messageObject.text);
+  messageContainer.appendChild(messageTextNode);
+ messageContainer.classList.add("is-size-4");
+  
+ 
+  
+  emailContainer = document.createElement('P');
+  emailTextNode = document.createTextNode(messageObject.email);
+  emailContainer.appendChild(emailTextNode);
+  emailContainer.classList.add("column","is-offset-2", "is-size-5");
+  
+  telContainer = document.createElement('P');
+ telTextNode = document.createTextNode(messageObject.phone);
+ telContainer.appendChild(telTextNode);
+  telContainer.classList.add("column", "is-size-5");
+  
+   contactDiv = document.createElement('DIV')
+  contactDiv.classList.add("columns");
+  contactDiv.appendChild(emailContainer);
+  contactDiv.appendChild(telContainer);
+  
+  container.appendChild(nameContainer);
+  container.appendChild(messageContainer);
+    container.appendChild(contactDiv);
+ 
+  
+  return container;
+  
+  
+  
+  
+  
+}</script>
+
+
+</body>
